@@ -22,7 +22,7 @@ if file:
         while ret:
             ret, frame = cap.read()
             if ret:
-                result = model.track(frame)
+                result = model.track(frame, persist=True)
                 result_frame = result[0].plot()
 
                 img = cv2.cvtColor(result_frame, cv2.COLOR_BGR2RGB)
